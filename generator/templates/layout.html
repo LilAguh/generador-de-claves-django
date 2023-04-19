@@ -6,10 +6,33 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Generador de Contraseñas</title>
-        <link rel="stylesheet" href="{% static 'css/template.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body class="body">
-        <nav></nav>
+        <header>
+            <a href="" class="header_logo">
+                <img
+                    src="{% static 'icons/cerrar.png' %}"
+                    alt="logo"
+                    class="header_logo-image"
+                />
+                <div class="header_logo-text">
+                    <p>Password</p>
+                    <p>Generator</plass=>
+                </div>
+            </a>
+            <nav>
+                <a href="" class="nav-link selected">Home</a>
+                <a href="" class="nav-link">About</a>
+            </nav>
+        </header>
         {% block content %} {% endblock %}
     </body>
+    <style>
+        @font-face {
+            font-family: Cyrillic;
+            src: url("{% static 'fonts/Cyrillic.ttf' %}") format("truetype");
+        }
+    </style>
 </html>
