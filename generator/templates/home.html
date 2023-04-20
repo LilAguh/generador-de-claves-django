@@ -1,22 +1,36 @@
 {% extends 'layout.html'%} {% block content %} {% load static %}
+<section>
+    <form action="{% url 'password' %}">
+        <img src="{% static 'icons/candado.png' %}" alt="" class="form_logo" />
+        <h1>Generador de contraseñas</h1>
 
-<form action="{% url 'password' %}">
-    <h1>Generador de contraseñas</h1>
-    <img src="{% static 'icons/candado.png' %}" alt="" />
+        <label for="length">Seleccionar la longitud de la contraseña:</label>
+        <input
+            type="range"
+            name="length"
+            id="length"
+            min="6"
+            max="23"
+            class="form_range"
+        />
 
-    <label for="length">Seleccionar la longitud de la contraseña:</label>
-    <input type="range" name="length" id="length" min="6" max="23" />
+        <div class="form_checkbox">
+            <label for="uppercase">Mayusculas</label>
+            <input type="checkbox" name="uppercase" id="uppercase" />
+        </div>
 
-    <label for="uppercase">Mayusculas</label>
-    <input type="checkbox" name="uppercase" id="uppercase" />
+        <div class="form_checkbox">
+            <label for="special">Caracteres Especiales</label>
+            <input type="checkbox" name="special" id="special" />
+        </div>
 
-    <label for="special">Caracteres Especiales</label>
-    <input type="checkbox" name="special" id="special" />
+        <div class="form_checkbox">
+            <label for="numbers">Numeros</label>
+            <input type="checkbox" name="numbers" id="numbers" />
+        </div>
 
-    <label for="numbers">Numeros</label>
-    <input type="checkbox" name="numbers" id="numbers" />
-
-    <button>Generar Contraseña</button>
-</form>
+        <button>Generar Contraseña</button>
+    </form>
+</section>
 
 {% endblock %}
