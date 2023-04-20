@@ -1,0 +1,38 @@
+section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    width: 600px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 50px;
+    gap: 16px;
+}
+
+.form_logo {
+    width: 90px;
+    height: 100px;
+    filter: invert(17%) sepia(51%) saturate(2141%) hue-rotate(263deg)
+        brightness(92%) contrast(94%);
+}
+
+.form_range {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_checkbox {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
