@@ -1,14 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import random
 # from django.http import HttpResponse
 
 
-def about(request):
-    return render(request, 'about.html')
-
-
 def home(request):
     return render(request, 'home.html')
+
+
+def refresh(request):
+    return redirect('home')
 
 
 def password(request):
