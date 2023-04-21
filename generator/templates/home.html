@@ -4,7 +4,12 @@
         <img src="{% static 'icons/candado.png' %}" alt="" class="form_logo" />
         <h1>Generador de contraseñas</h1>
 
-        <label for="length">Seleccionar la longitud de la contraseña:</label>
+        <div class="form_range-text">
+            <label for="length"
+                >Seleccionar la longitud de la contraseña:
+            </label>
+            <span id="range-value" class="result"></span>
+        </div>
         <input
             type="range"
             name="length"
@@ -16,21 +21,88 @@
 
         <div class="form_checkbox">
             <label for="uppercase">Mayusculas</label>
-            <input type="checkbox" name="uppercase" id="uppercase" />
+            <input
+                type="checkbox"
+                name="uppercase"
+                id="uppercase"
+                class="checkbox"
+            />
         </div>
 
         <div class="form_checkbox">
             <label for="special">Caracteres Especiales</label>
-            <input type="checkbox" name="special" id="special" />
+            <input
+                type="checkbox"
+                name="special"
+                id="special"
+                class="checkbox"
+            />
         </div>
 
         <div class="form_checkbox">
             <label for="numbers">Numeros</label>
-            <input type="checkbox" name="numbers" id="numbers" />
+            <input
+                type="checkbox"
+                name="numbers"
+                id="numbers"
+                class="checkbox"
+            />
         </div>
 
-        <button>Generar Contraseña</button>
+        <button id="button-generate">Generar Contraseña</button>
     </form>
 </section>
-
+<script>
+    const range = document.querySelector("#length");
+    console.log(range.value);
+    const value = range.value;
+    const rangeValue = document.querySelector("#range-value");
+    rangeValue.textContent = value;
+    range.addEventListener("input", () => {
+        console.log(range.value);
+        const value = range.value;
+        const rangeValue = document.querySelector("#range-value");
+        rangeValue.textContent = value;
+    });
+</script>
+<style>
+    .form_range-text {
+        display: flex;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+    #range-value {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #5d246b;
+        padding: 6px;
+        border-radius: 8px;
+        display: inline-block;
+        text-align: center;
+    }
+    .checkbox {
+        cursor: pointer;
+        background-color: white;
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        width: 18px;
+        height: 18px;
+        appearance: none;
+        border: 1px solid #5d246b;
+        border-radius: 4px;
+    }
+    .checkbox:checked {
+        background-color: #5d246bb5;
+    }
+    #button-generate {
+        color: white;
+        background-color: #5d246b;
+        border: none;
+        height: 40px;
+        padding: 0px 10px;
+        border-radius: 16px;
+        cursor: pointer;
+    }
+</style>
 {% endblock %}
